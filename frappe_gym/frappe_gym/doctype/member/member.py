@@ -90,8 +90,7 @@ def get_age(self):
 
 def get_timeline_data(doctype, member):
 	"""
-	Return Members timeline data from class activity
-	Also include the associated measurements in timeline data
+	Return Members timeline data from measurement activity
 	"""
 	member_timeline_data = dict(
 		frappe.db.sql(

@@ -38,3 +38,5 @@ def get_context(context):
     if frappe.db.exists("Gym Trainer Subscription",{"member_email": context.email}):
         trainer_name = frappe.db.get_list("Gym Trainer Subscription",filters={"member_email": context.email}, pluck='trainer')
         context.trainer = frappe.get_doc("Trainer",trainer_name[0])
+        routes = frappe.db.get_list("Gym Trainer Subscription",filters={"member_email": context.email}, pluck='route')
+        context.troute = routes[0]

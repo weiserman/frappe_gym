@@ -53,6 +53,7 @@
    "fieldname": "contract_status",
    "fieldtype": "Select",
    "hidden": 1,
+   "in_list_view": 1,
    "is_virtual": 1,
    "label": "Contract Status",
    "options": "Active\nExpired\nCancelled\nNot Started"
@@ -85,7 +86,6 @@
    "default": "Awaiting Payment",
    "fieldname": "payment_status",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "label": "Payment Status",
    "options": "Awaiting Payment\nPaid\nOverdue",
    "reqd": 1
@@ -137,7 +137,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-08 13:48:08.751866",
+ "modified": "2022-12-09 14:15:18.076917",
  "modified_by": "Administrator",
  "module": "Frappe Gym",
  "name": "Gym Membership",
