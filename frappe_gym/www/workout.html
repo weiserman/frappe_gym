@@ -1,0 +1,31 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+
+<main role="main">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Our Training plans</h1>
+            <p>Welcome to the workouts section of the Frappe Gym. We have created custom Gym plans depending on your
+                specific needs</br>Getting professional training will make all the difference.</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Join Our Gym Today &raquo;</a></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for workout in workouts %}
+            <!-- Example row of columns -->
+
+            <div class="col-md-4">
+                <h3>{{ workout.plan_name }}</h3>
+                <p>{{ workout.description}}</p>
+                <p><a class="btn btn-secondary" href="{{ workout.route }}" role="button">View details &raquo;</a></p>
+            </div>
+            {% endfor %}
+            <hr>
+        </div> <!-- /container -->
+    </div>
+</main>
+{% endblock %}

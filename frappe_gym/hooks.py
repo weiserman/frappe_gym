@@ -7,6 +7,16 @@ app_description = "Gym Management"
 app_email = "frappe@agile.co.za"
 app_license = "MIT"
 
+# Set up the custom 404 page
+website_catch_all = "not_found"
+
+portal_menu_items = [
+    {"title": "My Contracts", "route": "/contracts", "role": "Gym Member"},
+    {"title": "Classes", "route": "/bookings", "role": "Gym Member"},
+    {"title": "My Stats", "route": "/measurements", "role": "Gym Member"}
+
+]
+
 # Includes in <head>
 # ------------------
 

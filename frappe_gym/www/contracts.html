@@ -1,0 +1,61 @@
+{% extends "templates/web.html" %}
+{% block title %}
+{{ _("My Account") }}
+{% endblock %}
+{% block page_content %}
+<div class="my-account-container">
+    <h5 class="my-account-header">Your Gym Contracts</h5>
+    <div class="row account-info d-flex flex-column">
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Plan</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">End Date</th>
+                        <th scope="col">Days Left</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Payment Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contract in contracts %}
+                    <tr>
+                        <td>{{ contract.plan }}</td>
+                        <td>{{ contract.start_date }}</td>
+                        <td>{{ contract.end_date }}</td>
+                        <td>{{ contract.days_left }}</td>
+                        <td><span class="{{ contract.badge }}">{{ contract.contract_status }}</span>
+                        </td>
+                        <td>{{ contract.payment_status }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% if trainer is defined %}
+    <div class="row account-info d-flex flex-column">
+        <h5 class="my-account-header">Your Personal Trainer</h5>
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Mobile Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ trainer.full_name }}</td>
+                        <td><a href="mailto: {{ trainer.email }}">{{ trainer.email }}</a></td>
+                        <td><a href="tel:{{ trainer.mobile }}">{{ trainer.mobile }}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

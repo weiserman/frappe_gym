@@ -1,0 +1,41 @@
+{% extends "templates/web.html" %}
+{% block title %}
+{{ _("My Account") }}
+{% endblock %}
+{% block page_content %}
+<div class="my-account-container">
+    <h5 class="my-account-header">Your Measurements</h5>
+    <div class="row account-info d-flex flex-column">
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Heart Rate</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">BMI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if measurements is defined %}
+                    {% for measure in measurements %}
+                    <tr>
+                        <td>{{ measure.signs_date }}</td>
+                        <td>{{ measure.pulse }}</td>
+                        <td>{{ measure.weight }} Kgs </td>
+                        <td><span class="{{ measure.badge }}">{{ "%.2f"|format(measure.bmi) }}</span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td>No measurement data found</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+        <a type="button" class="btn btn-default" href="/capture-measurement/new">Add Measurement</a>
+    </div>
+</div>
+{% endblock %}
