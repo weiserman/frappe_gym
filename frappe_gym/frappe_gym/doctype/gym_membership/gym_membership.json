@@ -12,6 +12,7 @@
   "plan",
   "price",
   "contract_status",
+  "member_name",
   "column_break_6",
   "start_date",
   "end_date",
@@ -29,6 +30,7 @@
    "fieldname": "member",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Member",
    "options": "Member",
    "reqd": 1
@@ -53,7 +55,6 @@
    "fieldname": "contract_status",
    "fieldtype": "Select",
    "hidden": 1,
-   "in_list_view": 1,
    "is_virtual": 1,
    "label": "Contract Status",
    "options": "Active\nExpired\nCancelled\nNot Started"
@@ -133,11 +134,18 @@
    "fieldtype": "Data",
    "label": "Email",
    "read_only": 1
+  },
+  {
+   "fetch_from": "member.full_name",
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "label": "Member Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-09 14:15:18.076917",
+ "modified": "2022-12-09 15:22:38.042315",
  "modified_by": "Administrator",
  "module": "Frappe Gym",
  "name": "Gym Membership",
