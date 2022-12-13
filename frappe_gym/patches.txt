@@ -1,1 +1,1 @@
-frappe_gym.frappe_gym.patches-v1.v1patch.py
+frappe_gym.frappe_gym.patches-v1.v1patch
