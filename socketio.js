@@ -27,6 +27,7 @@ subscriber.subscribe('events');
 // Listen to events emmited by frappe.publish_realtime
 subscriber.on('message', function (channel, message, room) {
 	message = JSON.parse(message);
+	console.log(message);
 	if (message.room) {
 		io.to(message.room).emit(message.event, message.message);
 	} else {
