@@ -120,6 +120,13 @@ portal_menu_items = [
 # }
 # }
 
+doc_events = {
+    "Class Booking": {
+        "on_update": "frappe_gym.socketIO.new_class_booking"
+    }
+}
+
+
 # Scheduled Tasks
 # ---------------
 # Run this every minute for testing purposes
